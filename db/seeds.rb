@@ -18,6 +18,6 @@ end
     Appointment.create(
         dog_id: Faker::Number.non_zero_digit,
         groomer_id: Faker::Number.non_zero_digit,
-        time: Faker::Time.backward(days: 5, period: :morning, format: :short)
+        time: Faker::Time.forward(days: 5,  period: :evening, format: :long)
     )
 end 
