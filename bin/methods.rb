@@ -34,9 +34,10 @@ def create_groomer
     location_choices = ["Brooklyn", "Manhattan", "Queens", "Bronx", "Staten Island"]
     location_input = prompt.select("Where is your loft?", location_choices)
     groomer_location = Groomer.all.select{ |groomer_obj| groomer_obj.location == location_input}
-    groomer_names = Groomer.all.map{|groomer| groomer.name}.sample(3)
+    groomer_names = Groomer.all.map{|groomer| groomer.name}.sample(3).uniq
     groomer_input = prompt.select("Here is a list of all the groomers in the area! Feel free to save one!", groomer_names)
     Groomer.create(name: groomer_input, location: location_input)
+    # binding.pry
 end 
 
 def view_groomer

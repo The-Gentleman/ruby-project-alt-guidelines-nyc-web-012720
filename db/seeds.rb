@@ -9,7 +9,7 @@ end
 
 15.times do
     Groomer.create(
-        name: Faker::Creature::Dog.name,
+        name: Faker::DcComics.hero,
         location: ["Brooklyn", "Manhattan", "Queens", "Bronx", "Staten Island"].sample
     )
 end
